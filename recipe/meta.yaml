@@ -13,9 +13,10 @@ source:
     - 22.patch
     # Ensure that .dll gets installed in <CMAKE_INSTALL_PREFIX>/bin
     - install_library_in_default_location.patch
+    - disable_setting_custom_flags_in_arm_and_ppc.patch
 
 build:
-  number: 0
+  number: 1
   run_exports:
     # No ABI policy documented
     - {{ pin_subpackage(name, max_pin='x.x.x') }}
