@@ -1,5 +1,5 @@
 {% set name = "ampl-asl" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://github.com/ampl/asl/archive/refs/tags/v{{ version }}.tar.gz
-  sha256: 28426e67b610874bbf8fd71fae982921aafe42310ef674c86aa6ec1181472ad0
+  sha256: 57b767161fd95869757daa0761d9b19fa39ad5de4315f95a3c0dff08b0d4c4f2
   patches:
     # Backport https://github.com/ampl/asl/pull/22
     - 22.patch
@@ -16,7 +16,7 @@ source:
     - disable_setting_custom_flags_in_arm_and_ppc.patch
 
 build:
-  number: 2
+  number: 0
   run_exports:
     # No ABI policy documented
     - {{ pin_subpackage(name, max_pin='x.x.x') }}
@@ -52,7 +52,7 @@ test:
 about:
   home: https://github.com/ampl/asl
   license: BSD-3-Clause AND SMLNJ
-  license_file: 
+  license_file:
     - LICENSE
     - src/f2c/Notice
   summary: ASL (AMPL Solver Library).
